@@ -1,0 +1,22 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "serve": "node ./scripts/serve.mjs",
+    "build": "node ./scripts/build.mjs"
+  },
+  "pre-commit": [
+  ],
+  "keywords": [],
+  "author": "John Mc Quillan <john.mcq1llan@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.19.3",
+    "esbuild-plugin-polyfill-node": "^0.3.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
