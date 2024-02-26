@@ -1,9 +1,9 @@
 {
-  "name": "create-crud-api",
+  "name": "create-react-app",
   "version": "0.0.1",
-  "description": "Generator for a Lambda CRUD API",
+  "description": "Generator for a simple bare React App using esbuild",
   "type": "module",
-  "author": "",
+  "author": "John Mc Quillan",
   "bin": "src/index.js",
   "files": [
     "src",

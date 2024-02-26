@@ -1,5 +1,7 @@
-# React Project
-This is a React project built from template `@mcqj/create-react-app`.
+# <%= name %> React Project
+<%= description %>
+
+This React App project is built from template `@mcqj/create-react-app`.
 
 # Getting Started
 Clone the git repository and install the dependencies using `npm init`.
