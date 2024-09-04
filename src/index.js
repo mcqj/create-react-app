@@ -1,7 +1,9 @@
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import pluralize from 'pluralize';
-import * as utils from '@mcqj/npm-generator-core';
+import * as utils from '../../generator-core/index.js';
+// import * as utils from '@mcqj/npm-generator-core';
+import * as readline from 'node:readline/promises';
+import { stdin as input, stdout as output } from 'node:process';
 
 const projectName = 'react-app';
 
@@ -33,15 +35,35 @@ function cleanTemplateVars(templateVars) {
 }
 
 async function main() {
+  let templateVars = {};
   try {
-    const templateVars = await utils.getTemplateVars(optionsDescriptor);
+    templateVars = await utils.getTemplateVars(optionsDescriptor);
     augmentTemplateVars(templateVars);
     const projectRoot = await utils.createProject(`${templateVars.name}`);
-    await utils.copyTemplateFiles(templateRoot, projectRoot, templateVars);
+    await utils.copyTemplateFiles({ 
+      templateRoot, projectRoot, templateVars,
+      patterns: [
+        {
+          glob: ['**/*.jsx', '**/*.js', '**/*.json', '**/*.md'],
+          transformer: 'ejs'
+        }
+      ],
+      renameFiles: {
+        gitignore: '.gitignore',
+      }
+    });
     cleanTemplateVars(templateVars);
     await utils.saveDefaultVars(templateVars);
   } catch (err) {
-    console.error('Unexpected error', err);
+    console.error(err.message);
+    const rl = readline.createInterface({ input, output });
+    const answer = await rl.question(`
+      Normally, we don't save your answers to prompts when the command fails.
+      Would you like to save your answers? (Yes/No)
+    `);
+    if (answer.toLowerCase() === 'yes') {
+      await utils.saveDefaultVars(templateVars);
+    }
     process.exit(1);
   }
 }

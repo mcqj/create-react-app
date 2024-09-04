@@ -12,7 +12,7 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@mcqj/npm-generator-core": "^0.0.1-alpha2",
+    "@mcqj/npm-generator-core": "^0.0.1-alpha6",
     "ejs": "^3.1.9",
     "pluralize": "^8.0.0"
   }
