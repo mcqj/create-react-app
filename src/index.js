@@ -1,7 +1,8 @@
+#!/usr/bin/env node
+
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import * as utils from '../../generator-core/index.js';
-// import * as utils from '@mcqj/npm-generator-core';
+import * as utils from '@mcqj/npm-generator-core';
 import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
