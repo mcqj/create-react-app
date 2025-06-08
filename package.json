@@ -1,5 +1,5 @@
 {
-  "name": "@fathomtec/create-react-app",
+  "name": "@fathomtech/create-react-app",
   "version": "0.0.2-alpha7",
   "description": "Generator for a simple bare React App using esbuild",
   "type": "module",
@@ -12,7 +12,7 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@mcqj/npm-generator-core": "^0.0.1-alpha7",
+    "@mcqj/npm-generator-core": "^0.0.1-alpha8",
     "ejs": "^3.1.9",
     "pluralize": "^8.0.0"
   }

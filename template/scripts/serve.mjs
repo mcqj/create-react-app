@@ -79,13 +79,13 @@ let ctx = await esbuild.context({
 
 await ctx.watch()
 
-let { host, port } = await ctx.serve({
+let { hosts, port } = await ctx.serve({
   host: 'localhost',
   port: 3100,
   servedir: destDir,
   fallback: `${destDir}/index.html`,
 })
 
-const url = (`http://${host}:${port}`);
-const start = (process.platform == 'darwin' ? 'open' : process.platform == 'win32' ? 'start' : 'xdg-open');
+const url = (`http://${hosts[0]}:${port}`);
+const start = (process.platform === 'darwin' ? 'open' : process.platform === 'win32' ? 'start' : 'xdg-open');
 exec(start + ' ' + url);

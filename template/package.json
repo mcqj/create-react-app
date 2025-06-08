@@ -1,10 +1,12 @@
 {
-  "name": "Lingualist",
+  "name": "<%= name %>",
   "version": "0.0.1",
-  "description": "Language translation manager",
+  "description": "<%= description %>",
   "scripts": {
+    "start": "npm run serve",
     "serve": "node ./scripts/serve.mjs",
     "build": "node ./scripts/build.mjs",
+    "lint": "eslint .",
     "test:unit": "vitest --root src/"
   },
   "pre-commit": [],
@@ -12,16 +14,18 @@
   "author": "John Mc Quillan <john.mcq1llan@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@fathomtech/eslint-config-fathom": "^0.0.3-alpha-1",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@vitejs/plugin-react": "^4.3.1",
-    "esbuild": "^0.19.3",
+    "esbuild": "^0.25",
     "esbuild-plugin-polyfill-node": "^0.3.0",
-    "jsdom": "^25.0.0",
-    "vitest": "^2.0.5"
+    "eslint": "^9.28.0",
+    "jsdom": "^26.1",
+    "vitest": "^3.2"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.1",
+    "react-dom": "^19.1"
   }
 }

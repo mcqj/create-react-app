@@ -45,7 +45,7 @@ async function main() {
       templateRoot, projectRoot, templateVars,
       patterns: [
         {
-          glob: ['**/*.jsx', '**/*.js', '**/*.json', '**/*.md'],
+          glob: ['**/*.jsx', '**/*.js', '**/*.json', '**/*.html', '**/*.md'],
           transformer: 'ejs'
         }
       ],

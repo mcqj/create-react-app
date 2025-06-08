@@ -2,8 +2,7 @@ import { useEffect } from 'react';
 
 const useLiveReload = () => {
   useEffect(() => {
-    console.log('useLiveReload');
-    console.log(process.env.NODE_ENV);
+    // eslint-disable-next-line no-undef
     if (process.env.NODE_ENV !== 'production') {
       new EventSource('/esbuild').addEventListener('change', () => {
         console.log('reload');
